@@ -1,0 +1,737 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap');
+:root {
+    --bg-1 : #f4f5f6;
+    --bg-2 : #ffffff;
+
+    --color-1 : #F11158;
+    --color-2 : #ffffff;
+    --color-3 : #000000; 
+
+
+    --button-1 : #F11158;
+    --font-family-1 : 'Roboto', sans -serif;
+
+    --text-color-1 : rgb(110, 110, 110);
+    --menu-color-hover : #000000;
+}
+/* Styles généraux */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: var(--font-family-1);
+}
+
+html {
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    scroll-padding-top: 3rem;
+}
+
+body {
+    background-color: var(--bg-1);
+    overflow: hidden;
+}
+
+/* Sélection du texte pour Firefox */
+::-moz-selection {
+background-color: var(--color-1);
+color: var(--color-2);
+}
+
+/* Sélection du texte pour Safari et Chrome */
+::selection {
+background-color: var(--color-1);
+color: var(--color-2);
+}
+
+/* Style de l'en-tête (image + navbar) */
+header {
+position: relative; 
+}
+
+/* IMAGE MENU Accueil et aytres pages */
+.navbar__logo {
+height: 250px;
+}
+
+.image {
+width: 50vw;
+}
+
+.image__menu {
+height: 800px;
+}
+
+.image__hero {
+height: 500px;
+}
+
+
+/* barre de navigation */
+#mySidenav{
+display: none;
+}
+
+.navbar {
+position: absolute; 
+top: 0;
+z-index: 1; 
+display: flex; 
+align-items: center; 
+width: 100vw;
+height: 200px;
+margin: auto;
+}
+
+.menu{
+display: flex; 
+position: absolute;
+right: 0;
+margin-right: 60px;
+}
+
+.menu__a {
+margin-right: 20px; 
+text-decoration: none; 
+color: var(--text-color-1);
+font-size: 18px;
+font-weight: 500;
+position: relative;
+padding-bottom: 5px;
+
+}
+
+.menu__a::before {
+content: '';
+position: absolute;
+width: 100%;
+height: 1px;
+border-radius: 4px;
+background-color: var(--color-1);
+bottom: 0;
+left: 0;
+transform-origin: right;
+transform: scaleX(0);
+transition: transform .4s ease-in-out;
+}
+
+.menu__a:hover::before {
+transform-origin: left;
+transform: scaleX(1);
+/* height: 1px; */
+}
+
+.menu__a:hover {
+color: var(--menu-color-hover); 
+}
+
+/* HERO */
+.intro {
+display: flex;
+flex-direction: column;
+justify-content: center;
+position: absolute;
+z-index: 3;
+top: 190px;
+right: 70px;
+width: calc(100%/1.8);
+background-color: var(--bg-2);
+padding: 60px;
+}
+
+.intro__titre {
+font-size: 48px;
+margin-bottom: 10px;
+}
+
+.intro__paragraphe {
+font-size: 18px;
+margin: 35px 0 15px 0;
+text-align: justify;
+color: var(--text-color-1);
+line-height: 1.7;
+}
+
+.seperate{
+width: 70px;
+height: 2px;
+background-color:var(--color-1);
+border: none;
+}
+
+.btn {
+width: 150px;
+height: 50px;
+background-color: var(--button-1);
+border-radius: 50px;
+display: flex;
+justify-content: center;
+align-items: center;
+text-decoration: none;
+color: var(--color-2);
+margin-top: 15px;
+}
+
+.btn:hover {
+opacity: 0.7;
+}
+
+/* PASSIONS */
+.passions {
+display: flex;
+flex-direction: column;
+text-align: center;
+margin-top: 60px;
+}
+
+.passions .passion__titre {
+font-size: 40px;
+font-weight: 400;
+margin-bottom: 20px;
+}
+
+.container__passion__accueil {
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: center;
+}
+
+.image-overlay {
+width: 300px;
+height: 450px;
+border-radius: 16px;
+margin: 20px;
+overflow: hidden;
+position: relative;
+transition: transform 0.3s ease-in-out;
+}
+
+.image-overlay img {
+width: 100%;
+height: 100%;
+border-radius: 16px;
+text-decoration: none;
+
+}
+
+.image-text {
+position: absolute;
+bottom: 45%;
+left: 50%;
+transform: translateX(-50%);
+background-color: rgba(0, 0, 0, 0.65);
+color: var(--color-2);
+padding: 20px 50px;
+border-radius: 50px;
+opacity: 0;
+transition: opacity 0.3s ease-in-out;
+cursor: pointer;
+}
+
+
+.image-overlay:hover .image-text {
+opacity: 1;
+}
+
+ a.decoration-none {
+text-decoration: none;
+color: var(--color-2);
+}
+.image-overlay:hover {
+transform: scale(1.05);
+}
+
+/* container générique page accueil passions */
+.figure {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+font-size: 18px;
+}
+
+figcaption {
+font-weight: 700;
+}
+
+
+/* FOOTER */
+footer {
+margin-top: 50px ;
+background-color: var(--color-2);
+bottom: 0;
+}
+
+.footer {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+margin: 0 100px 0 35px;
+}
+
+.social {
+display: flex;
+justify-content: space-between;
+width: 100px;
+}
+
+.mention {
+display: flex;
+justify-content: center;
+align-items: center;
+margin: 15px 0 0 0;
+background-color: var(--color-2);
+padding: 10px 0;
+color: var(--text-color-1);
+}
+
+footer hr {
+opacity: 0.2;
+margin-top: -20px;
+background-color: rgba(50, 50, 50, 0.613); 
+height: 0.5px;
+border: none;
+}
+
+.hover-svg:hover path {
+fill: var(--button-1);
+}
+
+
+
+/* AUTRE PAGE */
+/* container de mes passions */
+.container-passion {
+display: flex;
+flex-direction: column;
+margin: 30px 100px;
+}
+/* titre du container */
+.container-passion h2 {
+font-size: 42px;
+margin-bottom: 10px;
+}
+/* separateur sous le titre */
+.container-passion hr {
+margin-bottom: 30px;
+}
+/* paragraphe expliquant mes passions */
+.container-paragraphe {
+column-count: 2;
+column-gap: 3em;
+text-align: justify;
+font-size: 18px;
+line-height: 1.7;
+margin-bottom: 30px;
+color: var(--text-color-1);
+}
+
+/* container contenant l'image illustrant mes passions */
+.container-passion img{
+border-radius: 15px;
+width: 100%;
+height: 550px;
+}
+
+/* position de l'image */
+.position__bottom {
+object-fit: cover;
+object-position: bottom;
+}
+
+.position__center {
+object-fit: cover;
+object-position: center;
+}
+
+
+/* VISIBILITE MENU SUR IMAGE HERO*/
+@media screen and (min-width: 900px) and (max-width: 1091px) {
+    .menu {
+        background-color: var(--bg-2); 
+        padding: 20px 10px 18px 25px;
+        filter: drop-shadow(0px 2px 2px var(--text-color-1));
+    }
+}
+
+/* INTRO PAS DE CHEVAUCHEMENT avec le container main   */
+@media screen and (min-width: 900px) and (max-width: 1190px) {
+    .intro {
+        padding: 35px;    
+    }
+}
+
+
+
+
+
+
+
+
+/* TABLETTE */
+@media screen and (min-width: 550px) and (max-width: 900px) {
+    
+    .navbar {
+    justify-content: space-between;
+    }
+    .navbar a img {
+    margin-left: -17px;
+    }
+    .menu {
+    display: none;
+    }
+
+    /* Sidenav menu */
+    .sidenav {
+    height: 800px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    background-color: var(--bg-1);
+    padding-top: 200px;
+    transition: right 0.5s ease;
+    }
+
+
+    /* Sidenav menu links */
+    .sidenav a {
+    padding: 20px 20px 20px 20px;
+    text-decoration: none;
+    font-size: 35px;
+    color: var(--color-1);
+    display: block;
+    transition: 0.3s;
+    text-align: center;
+    }
+
+    .sidenav-a:hover {
+    font-size: 30px;
+
+    }
+    /* Active class */
+    .sidenav.active {
+    right: 0;
+    }
+
+    /* Close btn */
+    .sidenav .close {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 90px;
+    color: var(--color-1);
+    }
+    
+    #mySidenav{
+    display: block;
+    }
+
+    .burger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-3);
+    width: 50px;
+    height: 50px;
+    margin: -25px 60px 0 0;
+    }
+    .burger-icon span {
+    display: block;
+    width: 30px;
+    height: 4px;
+    background-color: var(--color-2);
+    margin: 8px 0;
+    position: right;
+    }
+
+    /* image de couverture page accueil */
+    .image__menu {
+    width: 600px;
+    height: 500px;
+    }
+
+    /* image de couverture autre page */
+    .image__hero {
+    width: 100%;
+    height: 500px;
+    }
+
+
+    /* contanier intro (titre et paragraphe) */
+    .intro {
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%; 
+    background-color: var(--bg-2);
+    padding: 60px;
+    position:static;
+    }
+    /* titre intro */
+    .intro__titre {
+    font-size: 48px;
+    margin-bottom: 10px;
+    }
+
+    /* intro du projet page accueil */
+    .intro__paragraphe {
+    font-size: 20px;
+    margin: 35px 0 15px 0;
+    text-align: justify;
+    color: var(--text-color-1);
+    line-height: 1.7;
+    }
+
+    /* container passions page d'accueil */
+    .container__passion__accueil {
+    align-items: center; 
+    }
+    /* containr passion autres pages */
+    .container-passion {
+    display: flex;
+    flex-direction: column;
+    margin: 30px 60px;
+    }
+
+    .container-passion h2 {
+    font-size: 32px;
+    }
+    .container-passion hr{
+    width: 35px;
+    }
+
+    /* image page d'accueil */
+    .image-passion {
+    width: 500px;
+    height: auto; 
+    }
+
+
+    .container-paragraphe {
+    column-count: 1;
+    text-align: justify;
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    color: var(--text-color-1);
+    }
+
+    /* FOOTER */
+    .footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 60px 0 0 ;
+    }
+    
+}
+
+
+
+
+
+
+
+
+/* Media Query MOBILE*/
+@media (max-width: 550px) {
+    
+    .navbar {
+    justify-content: space-between;
+    }
+
+    /* logo du site */
+    .navbar a img {
+    margin-left: -17px;
+    }
+
+    /* Menu desktop */
+    .menu {
+    display: none;
+    }
+
+    /* Sidenav menu container */
+    .sidenav {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    background-color: var(--bg-1);
+    padding-top: 200px;
+    transition: right 0.5s ease;
+    }
+
+    /* Sidenav menu liens */
+    .sidenav a {
+    padding: 20px 20px 20px 20px;
+    text-decoration: none;
+    font-size: 35px;
+    color: var(--color-1);
+    display: block;
+    transition: 0.3s;
+    text-align: center;
+    }
+
+    .sidenav-a:hover {
+    font-size: 30px;
+
+    }
+    /* Active class */
+    .sidenav.active {
+    right: 0;
+    }
+
+    /* Close btn */
+    .sidenav .close {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 80px;
+    color: var(--color-1);
+    }
+
+    #mySidenav{
+    display: block;
+    }
+
+    /* Icone burger  */
+    .burger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-3);
+    width: 50px;
+    height: 50px;
+    margin: -25px 35px 0 0;
+    }
+    .burger-icon span {
+    display: block;
+    width: 30px;
+    height: 4px;
+    background-color: var(--color-2);
+    margin: 8px 0;
+    position: right;
+    }
+
+    /* image de couverture page d'accueil */
+    .image__menu {
+    width: 100%;
+    height: 400px;
+    }
+
+    /* image de couverture autres pages */
+    .image__hero {
+    width: 100%;
+    height: 400px;
+    }
+
+    /* Container intro (titre et paragraphe)  */
+    .intro {
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%; 
+    background-color: var(--bg-2);
+    padding: 40px;
+    position:static;
+    }
+
+    .intro__titre {
+    font-size: 48px;
+    margin-bottom: 10px;
+    }
+
+    .intro__paragraphe {
+    font-size: 20px;
+    margin: 35px 0 15px 0;
+    text-align: justify;
+    color: var(--text-color-1);
+    line-height: 1.7;
+    }
+
+    /* container passions page d'accueil */
+    .container__passion__accueil{
+    flex-direction: column; 
+    align-items: cener; 
+    }
+    /* image container passions page d'accueil */
+    .image-passion {
+    width: 500px;
+    height: auto; 
+    }
+
+    .container-passion {
+    display: flex;
+    flex-direction: column;
+    margin: 30px 40px;
+    }
+    .container-passion h2 {
+    font-size: 28px;
+    }
+    .container-passion hr{
+    width: 35px;
+    }
+   
+    /* container paragraphe autre page */
+    .container-paragraphe {
+    column-count: 1;
+    text-align: justify;
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    color: var(--text-color-1);
+    }
+    
+
+
+    /* FOOTER */
+    .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 80px 0 25px;
+    
+    }
+    
+    .social {
+    display: flex;
+    width: 100px;
+    margin-top: -50px;
+    }
+    
+    .mention {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0 0 0;
+    background-color: var(--color-2);
+    color: var(--text-color-1);
+    }
+
+    /* séparateur */
+    footer hr {
+    opacity: 0.2;
+    background-color: rgba(50, 50, 50, 0.613); 
+    height: 0.5px;
+    border: none;
+    }
+
+    /* logo footer */
+    footer a img {
+    margin-top: -30px;
+    }
+    
+}
+
+
+
+
